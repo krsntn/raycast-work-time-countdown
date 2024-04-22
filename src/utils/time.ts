@@ -47,6 +47,10 @@ export function getTitle(hours: number, minutes: number) {
 }
 
 export function getProgressBar(percentage: number, options: { limit?: number } = {}) {
+  if (percentage < 0) {
+    return "Currently not within working hours. 🥂";
+  }
+
   const { limit = 20 } = options;
   const progress = Math.floor((percentage / 100) * limit);
 

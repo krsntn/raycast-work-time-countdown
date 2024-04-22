@@ -10,7 +10,7 @@ export default async function Command() {
 
   if (hours < 0 || minutes < 0 || (!includeWeekends && isWeekend(now)) || now.getHours() < startHour) {
     return await updateCommandMetadata({
-      subtitle: `${getProgressBar(0)}`,
+      subtitle: `${getProgressBar(-1)}`,
     });
   }
 
